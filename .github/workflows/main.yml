@@ -8,20 +8,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -run: echo "this job was automatically triggered by a ${{github.event_name}} event."
-      -run: echo "this job is now running on a ${{runner.os}} server hosted by github."
-      -run: echo "the name of your branch is ${{github.ref}} and your repository is ${{github.repository}}"
+      - run: echo "this job was automatically triggered by a ${{github.event_name}} event."
+      - run: echo "this job is now running on a ${{runner.os}} server hosted by github."
+      - run: echo "the name of your branch is ${{github.ref}} and your repository is ${{github.repository}}"
 
-      -name: check out the repository code 
-      uses: actions/checkout@v4
+      - name: check out the repository code 
+        uses: actions/checkout@v4
 
-      -run: echo "the ${{github.repository}} repository has been cloned to the runner"
+      - run: echo "the ${{github.repository}} repository has been cloned to the runner"
 
-      -run: echo "the workflow is now ready to test your code on the runner"
+      - run: echo "the workflow is now ready to test your code on the runner"
 
-      -name: list files in the repository 
+      - name: list files in the repository 
 
-      run: |
-        ls ${{github.workspace}}
+        run: |
+          ls ${{github.workspace}}
 
-      -run: echo "this job status is ${{job.status}}"
+      - run: echo "this job status is ${{job.status}}"
